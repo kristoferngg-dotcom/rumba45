@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fondo con contenedores</title>
+
+<style>
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image: url("fondo3rumba.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+
+/* Contenedores */
+.caja {
+  position: absolute;
+  width: 250px;
+  background: rgba(255,255,255,0.0);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  
+}
+
+
+/* Posiciones */
+.caja1 {
+  top: 50px;
+  left: 10px;
+}
+
+.caja2 {
+  top: 80px;
+  right: 100px;
+}
+
+.caja3 {
+  top: 250px;
+  left: 100px;
+}
+
+.caja4 {
+  top: 250px;
+  right: 100px;
+}
+
+
+/* Imágenes */
+.caja img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+/* Logo girando */
+.logo {
+  animation: girar 4s linear infinite;
+  width: 400px !important;
+}
+
+
+@keyframes girar {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* Slogan */
+.slogan {
+  width: 300px !important;
+  animation: colores 3s linear infinite;
+}
+
+
+/* Imagenes de abajo */
+.imagen-animada {
+  width: 100%;
+  animation: colores 3s linear infinite;
+}
+
+
+/* Cambio de colores */
+@keyframes colores {
+
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+
+}
+
+
+/* Publicidad del centro */
+.publicidad {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+/* Texto que se mueve abajo */
+.texto-movible {
+  display: inline-block;
+  white-space: nowrap;
+  color: white;
+  animation: moverTexto 45s linear infinite, colores 5s linear infinite;
+}
+
+
+@keyframes moverTexto {
+
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+
+}
+
+
+
+/* Barra del titulo fija */
+.titulo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  font-size: 35px;
+  padding: 20px;
+  background: rgba(0,0,0,0.5);
+}
+
+
+/* Texto del titulo moviendose y cambiando de color */
+.titulo-texto {
+  display: inline-block;
+  white-space: nowrap;
+
+  background: linear-gradient(90deg, red, yellow, cyan, lime, red);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: moverTitulo 40s ease-in-out infinite, moverColor 6s linear infinite;
+}
+.movtext {
+  display: inline-block;
+  white-space: nowrap;
+
+  background: linear-gradient(90deg, red, yellow, cyan, lime, red);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: moverTitulo 10s ease-in-out infinite, moverColor 6s linear infinite;
+}
+
+
+@keyframes moverTitulo {
+
+  from {
+    transform: translateX(30%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+@keyframes moverColor {
+
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="titulo">
+
+<span class="titulo-texto">
+🔥 Bienvenidos al Mundo Sonidero 🔥
+🎶 El Sabor de la Música Está Aquí 🎶
+🔥 Donde Nace el Ambiente y Vive el Ritmo 🔥
+🎵 La Música Que Hace Vibrar Corazones 🎵
+💥 Puro Ritmo, Sabor y Alegría 💥
+🎧 El Poder del Sonido en un Solo Lugar 🎧
+🔥 La Fiesta Comienza Aquí 🔥
+</span>
+
+</div>
+
+
+
+<audio id="musica" controls loop>
+  <source src="./comandante_de_bocinas.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<div class="caja caja1">
+  <img class="logo" src="logo.png" alt="logo">
+</div>
+
+
+
+<div class="caja caja2">
+  <img class="slogan" src="slogan.jpg" alt="slogan">
+</div>
+
+
+
+<div class="caja caja3">
+
+<h3 class="movtext" >CAPITAN DEL DESMADRE</h3>
+
+<img class="imagen-animada" src="logo2.jpg" alt="imagen3">
+
+<h3 class="movtext">
+¡El sabor, la música y la alegría están aquí!
+</h3>
+
+</div>
+
+
+
+
+<div class="caja caja4">
+
+<h3 class="movtext" >CAPITAN PINGA LOCA</h3>
+
+<img class="imagen-animada" src="logopecas.jpg" alt="imagen4">
+
+<h3 class="movtext">
+¡Poniendo el ambiente que todos esperaban!
+</h3>
+
+</div>
+
+
+
+
+<div class="publicidad">
+
+<h2>¡Sonido Rumba 45!</h2>
+
+<h3>
+Sonidero creado y dirijido por pecas, toda la sabrosura del sonido, puedes contactarnos para cualquier tipo de eventos, reuniones, fiestas, XV años,
+bodas, etc 
+
+</h3>
+
+</div>
+
+
+</body>
+</html>
