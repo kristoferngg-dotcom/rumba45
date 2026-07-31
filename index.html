@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fondo con contenedores</title>
 
 <style>
@@ -14,9 +15,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
 }
-
 
 /* Contenedores */
 .caja {
@@ -26,31 +25,13 @@ body {
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  
 }
-
 
 /* Posiciones */
-.caja1 {
-  top: 50px;
-  left: 10px;
-}
-
-.caja2 {
-  top: 80px;
-  right: 100px;
-}
-
-.caja3 {
-  top: 250px;
-  left: 100px;
-}
-
-.caja4 {
-  top: 250px;
-  right: 100px;
-}
-
+.caja1 { top: 50px; left: 10px; }
+.caja2 { top: 80px; right: 100px; }
+.caja3 { top: 250px; left: 100px; }
+.caja4 { top: 250px; right: 100px; }
 
 /* Imágenes */
 .caja img {
@@ -58,26 +39,16 @@ body {
   border-radius: 10px;
 }
 
-
 /* Logo girando */
 .logo {
   animation: girar 4s linear infinite;
   width: 400px !important;
 }
 
-
 @keyframes girar {
-
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
-
 
 /* Slogan */
 .slogan {
@@ -85,27 +56,17 @@ body {
   animation: colores 3s linear infinite;
 }
 
-
 /* Imagenes de abajo */
 .imagen-animada {
   width: 100%;
   animation: colores 3s linear infinite;
 }
 
-
 /* Cambio de colores */
 @keyframes colores {
-
-  0% {
-    filter: hue-rotate(0deg);
-  }
-
-  100% {
-    filter: hue-rotate(360deg);
-  }
-
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
 }
-
 
 /* Publicidad del centro */
 .publicidad {
@@ -121,8 +82,7 @@ body {
   font-size: 20px;
 }
 
-
-/* Texto que se mueve abajo */
+/* Texto movible */
 .texto-movible {
   display: inline-block;
   white-space: nowrap;
@@ -130,22 +90,12 @@ body {
   animation: moverTexto 45s linear infinite, colores 5s linear infinite;
 }
 
-
 @keyframes moverTexto {
-
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
-
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
 }
 
-
-
-/* Barra del titulo fija */
+/* Barra del titulo */
 .titulo {
   position: absolute;
   top: 0;
@@ -155,70 +105,92 @@ body {
   font-size: 35px;
   padding: 20px;
   background: rgba(0,0,0,0.5);
+  box-sizing: border-box;
 }
 
-
-/* Texto del titulo moviendose y cambiando de color */
+/* Texto del titulo */
 .titulo-texto {
   display: inline-block;
   white-space: nowrap;
-
   background: linear-gradient(90deg, red, yellow, cyan, lime, red);
   background-size: 400%;
   -webkit-background-clip: text;
   color: transparent;
-
   animation: moverTitulo 40s ease-in-out infinite, moverColor 6s linear infinite;
 }
+
 .movtext {
   display: inline-block;
   white-space: nowrap;
-
   background: linear-gradient(90deg, red, yellow, cyan, lime, red);
   background-size: 400%;
   -webkit-background-clip: text;
   color: transparent;
-
   animation: moverTitulo 10s ease-in-out infinite, moverColor 6s linear infinite;
 }
 
-
 @keyframes moverTitulo {
-
-  from {
-    transform: translateX(30%);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-
+  from { transform: translateX(30%); }
+  to { transform: translateX(-50%); }
 }
-
 
 @keyframes moverColor {
+  0% { background-position: 0%; }
+  100% { background-position: 400%; }
+}
 
-  0% {
-    background-position: 0%;
+/* 🔥 RESPONSIVE (CELULAR) */
+@media (max-width: 600px) {
+
+  .titulo {
+    font-size: 18px;
+    padding: 10px;
   }
 
-  100% {
-    background-position: 400%;
+  .titulo-texto {
+    animation-duration: 20s;
+  }
+
+  .caja {
+    width: 90%;
+    left: 5% !important;
+    right: auto !important;
+  }
+
+  .caja1 { top: 80px; }
+  .caja2 { top: 200px; }
+  .caja3 { top: 350px; }
+  .caja4 { top: 550px; }
+
+  .logo {
+    width: 200px !important;
+  }
+
+  .slogan {
+    width: 200px !important;
+  }
+
+  .publicidad {
+    width: 90%;
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  audio {
+    width: 90%;
+    position: fixed;
+    bottom: 10px;
+    left: 5%;
   }
 
 }
 
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="titulo">
-
 <span class="titulo-texto">
 🔥 Bienvenidos al Mundo Sonidero 🔥
 🎶 El Sabor de la Música Está Aquí 🎶
@@ -228,71 +200,40 @@ body {
 🎧 El Poder del Sonido en un Solo Lugar 🎧
 🔥 La Fiesta Comienza Aquí 🔥
 </span>
-
 </div>
-
-
 
 <audio id="musica" controls loop>
   <source src="./comandante_de_bocinas.mp3" type="audio/mpeg">
 </audio>
 
-
-
 <div class="caja caja1">
-  <img class="logo" src="logo.png" alt="logo">
+  <img class="logo" src="logo.png">
 </div>
-
-
 
 <div class="caja caja2">
-  <img class="slogan" src="slogan.jpg" alt="slogan">
+  <img class="slogan" src="slogan.jpg">
 </div>
-
-
 
 <div class="caja caja3">
-
-<h3 class="movtext" >CAPITAN DEL DESMADRE</h3>
-
-<img class="imagen-animada" src="logo2.jpg" alt="imagen3">
-
-<h3 class="movtext">
-¡El sabor, la música y la alegría están aquí!
-</h3>
-
+  <h3 class="movtext">CAPITAN DEL DESMADRE</h3>
+  <img class="imagen-animada" src="logo2.jpg">
+  <h3 class="movtext">¡El sabor, la música y la alegría están aquí!</h3>
 </div>
-
-
-
 
 <div class="caja caja4">
-
-<h3 class="movtext" >CAPITAN PINGA LOCA</h3>
-
-<img class="imagen-animada" src="logopecas.jpg" alt="imagen4">
-
-<h3 class="movtext">
-¡Poniendo el ambiente que todos esperaban!
-</h3>
-
+  <h3 class="movtext">CAPITAN PINGA LOCA</h3>
+  <img class="imagen-animada" src="logopecas.jpg">
+  <h3 class="movtext">¡Poniendo el ambiente que todos esperaban!</h3>
 </div>
-
-
-
 
 <div class="publicidad">
-
-<h2>¡Sonido Rumba 45!</h2>
-
-<h3>
-Sonidero creado y dirijido por pecas, toda la sabrosura del sonido, puedes contactarnos para cualquier tipo de eventos, reuniones, fiestas, XV años,
-bodas, etc 
-
-</h3>
-
+  <h2>¡Sonido Rumba 45!</h2>
+  <h3>
+    Sonidero creado y dirigido por pecas, toda la sabrosura del sonido,
+    puedes contactarnos para cualquier tipo de eventos, reuniones, fiestas,
+    XV años, bodas, etc
+  </h3>
 </div>
-
 
 </body>
 </html>
