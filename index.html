@@ -195,11 +195,63 @@ body {
   }
 
 }
+/* ☰ BOTON HAMBURGUESA */
+.boton-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  font-size: 35px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  padding: 5px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+/* PANEL DE MUSICA */
+.menu-musica {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 300px;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  color: white;
+  z-index: 998;
+  padding: 20px;
+  transition: 0.4s;
+  text-align: center;
+}
+
+
+.menu-musica.activo {
+  right: 0;
+}
+
+
+.menu-musica audio {
+  width: 100%;
+}
+
+
+@media(max-width:600px){
+
+.menu-musica {
+  width: 80%;
+}
+
+}
 
 </style>
 </head>
 
 <body>
+
+  <div class="boton-menu" onclick="abrirMenu()">
+☰
+</div>
 
 <div class="titulo">
 <span class="titulo-texto">
@@ -213,9 +265,15 @@ body {
 </span>
 </div>
 
+<div class="menu-musica" id="menuMusica">
+
+<h2>🎧 Escucha un poco de nuestro ritmo</h2>
+
 <audio id="musica" controls loop>
   <source src="./comandante_de_bocinas.mp3" type="audio/mpeg">
 </audio>
+
+</div>
 
 <div class="contenedor">
 
@@ -249,6 +307,16 @@ body {
 </div>
 
 </div>
+<script>
+
+function abrirMenu(){
+
+document.getElementById("menuMusica")
+.classList.toggle("activo");
+
+}
+
+</script>
 
 </body>
 </html>
