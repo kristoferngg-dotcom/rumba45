@@ -24,12 +24,11 @@ margin:0;
 
 width:100%;
 
-min-height:100%;
+height:100%;
 
-overflow-x:hidden;
+overflow:hidden;
 
-overflow-y:auto;
-
+background:#000;
 
 background-image:url("fondo3rumba.jpg");
 
@@ -43,7 +42,10 @@ background-repeat:no-repeat;
 
 
 
-/* ESCENARIO */
+
+
+/* ESCENARIO QUE SE ESCALA */
+
 
 .escenario{
 
@@ -53,13 +55,18 @@ top:0;
 
 left:0;
 
-width:100vw;
+width:1280px;
 
-height:100vh;
+height:720px;
+
+transform-origin:top left;
 
 overflow:hidden;
 
 }
+
+
+
 
 
 
@@ -68,15 +75,16 @@ overflow:hidden;
 
 .contenedor{
 
-position:absolute;
+position:relative;
 
-width:100%;
+width:1280px;
 
-height:100%;
+height:720px;
 
 z-index:2;
 
 }
+
 
 
 
@@ -90,7 +98,7 @@ z-index:2;
 
 position:absolute;
 
-width:clamp(120px,18vw,250px);
+width:230px;
 
 padding:10px;
 
@@ -104,9 +112,9 @@ text-align:center;
 
 .caja1{
 
-top:5vh;
+top:35px;
 
-left:2vw;
+left:30px;
 
 }
 
@@ -114,9 +122,9 @@ left:2vw;
 
 .caja2{
 
-top:10vh;
+top:70px;
 
-right:10vw;
+right:120px;
 
 }
 
@@ -124,9 +132,9 @@ right:10vw;
 
 .caja3{
 
-top:32vh;
+top:230px;
 
-left:8vw;
+left:100px;
 
 }
 
@@ -134,9 +142,9 @@ left:8vw;
 
 .caja4{
 
-top:32vh;
+top:230px;
 
-right:8vw;
+right:100px;
 
 }
 
@@ -160,20 +168,20 @@ border-radius:10px;
 
 
 
+
 /* LOGO */
 
 
 .logo{
 
-width:clamp(200px,28vw,400px)!important;
-
+width:400px !important;
 
 animation:girar 4s linear infinite;
-
 
 transform-origin:center;
 
 }
+
 
 
 
@@ -217,6 +225,7 @@ animation:colores 3s linear infinite;
 
 
 
+
 @keyframes colores{
 
 
@@ -250,17 +259,17 @@ filter:hue-rotate(360deg);
 position:absolute;
 
 
-top:55%;
+top:400px;
 
 
 left:50%;
 
 
-transform:translate(-50%,-50%);
+transform:translateX(-50%);
 
 
 
-width:clamp(280px,35vw,400px);
+width:400px;
 
 
 
@@ -280,11 +289,10 @@ text-align:center;
 
 
 
-font-size:clamp(12px,1.3vw,20px);
+font-size:18px;
 
 
 }
-
 
 
 
@@ -324,8 +332,6 @@ z-index:10;
 
 
 }
-
-
 
 
 
@@ -370,9 +376,7 @@ color:transparent;
 
 animation:
 
-
 moverTitulo 10s ease-in-out infinite,
-
 
 moverColor 6s linear infinite;
 
@@ -387,7 +391,6 @@ moverColor 6s linear infinite;
 animation-duration:40s;
 
 }
-
 
 
 
@@ -452,7 +455,7 @@ right:20px;
 z-index:999;
 
 
-font-size:clamp(25px,3vw,35px);
+font-size:35px;
 
 
 color:white;
@@ -477,6 +480,7 @@ cursor:pointer;
 
 
 
+
 /* MENU MUSICA */
 
 
@@ -492,7 +496,7 @@ top:0;
 right:-350px;
 
 
-width:clamp(250px,25vw,300px);
+width:300px;
 
 
 height:100%;
@@ -533,6 +537,7 @@ right:0;
 
 
 
+
 .menu-musica audio{
 
 
@@ -540,6 +545,7 @@ width:100%;
 
 
 }
+
 
 
 
@@ -565,10 +571,10 @@ position:absolute;
 top:0;
 
 
-width:35vw;
+width:500px;
 
 
-height:100%;
+height:720px;
 
 
 z-index:0;
@@ -589,10 +595,12 @@ filter:blur(40px);
 
 
 
+
+
 .contenedor::before{
 
 
-left:-10vw;
+left:-100px;
 
 
 background:linear-gradient(
@@ -621,10 +629,12 @@ animation:luz1 6s infinite alternate;
 
 
 
+
+
 .contenedor::after{
 
 
-right:-10vw;
+right:-100px;
 
 
 background:linear-gradient(
@@ -654,6 +664,8 @@ animation:luz2 6s infinite alternate;
 
 
 
+
+
 @keyframes luz1{
 
 
@@ -673,6 +685,8 @@ transform:rotate(30deg) translateY(80px);
 
 
 }
+
+
 
 
 
@@ -705,6 +719,7 @@ transform:rotate(-30deg) translateY(-80px);
 
 
 
+
 /* LASERES */
 
 
@@ -714,13 +729,13 @@ transform:rotate(-30deg) translateY(-80px);
 position:absolute;
 
 
-width:120%;
+width:1500px;
 
 
-height:3px;
+height:4px;
 
 
-left:-10%;
+left:-110px;
 
 
 background:linear-gradient(
@@ -763,16 +778,21 @@ animation:moverLaser 5s linear infinite;
 
 
 
+
 .laser:nth-child(2){
 
 
-top:40%;
+top:250px;
 
 
 animation-delay:2s;
 
 
 }
+
+
+
+
 
 
 
@@ -800,6 +820,7 @@ transform:translateX(30%) rotate(20deg);
 
 
 }
+
 
 
 
@@ -838,6 +859,8 @@ margin-top:20px;
 
 
 
+
+
 .barra{
 
 
@@ -863,46 +886,10 @@ transition:height .1s;
 
 
 
-
-/* AJUSTES PEQUEÑOS EN PANTALLAS CHICAS */
-
-
-@media(max-width:600px){
-
-
-.titulo{
-
-padding:10px;
-
-}
-
-
-
-.publicidad{
-
-padding:10px;
-
-}
-
-
-
-.menu-musica{
-
-padding:15px;
-
-}
-
-
-
-}
-
 </style>
 
 </head>
-
-
 <body>
-
 
 
 
@@ -928,6 +915,7 @@ padding:15px;
 
 
 </div>
+
 
 
 
@@ -978,6 +966,7 @@ padding:15px;
 
 
 
+
 <!-- MENU MUSICA -->
 
 
@@ -990,6 +979,8 @@ padding:15px;
 🎧 Escucha un poco de nuestro ritmo
 
 </h2>
+
+
 
 
 
@@ -1064,15 +1055,14 @@ padding:15px;
 
 
 
-<!-- ESCENARIO -->
+<!-- ESCENARIO ESCALABLE -->
 
 
-<div class="escenario">
+<div class="escenario" id="escenario">
 
 
 
 <div class="contenedor">
-
 
 
 
@@ -1087,6 +1077,7 @@ padding:15px;
 
 
 </div>
+
 
 
 
@@ -1127,7 +1118,9 @@ CAPITAN DEL DESMADRE
 
 
 
+
 <img class="imagen-animada" src="logo2.jpg">
+
 
 
 
@@ -1141,6 +1134,7 @@ CAPITAN DEL DESMADRE
 
 
 </h3>
+
 
 
 
@@ -1172,8 +1166,8 @@ CAPITAN PINGA LOCA
 
 
 
-<img class="imagen-animada" src="logopecas.jpg">
 
+<img class="imagen-animada" src="logopecas.jpg">
 
 
 
@@ -1188,6 +1182,7 @@ CAPITAN PINGA LOCA
 
 
 </h3>
+
 
 
 
@@ -1220,6 +1215,8 @@ CAPITAN PINGA LOCA
 
 
 
+
+
 <h3>
 
 
@@ -1234,19 +1231,6 @@ fiestas, XV años, bodas, etc.
 
 
 
-</div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
 
 </div>
 
@@ -1254,7 +1238,80 @@ fiestas, XV años, bodas, etc.
 
 
 
+
+
+
+</div>
+
+
+</div>
 <script>
+
+
+
+
+
+/* ESCALADO COMPLETO DEL ESCENARIO */
+
+
+function ajustarEscenario(){
+
+
+
+let anchoPantalla = window.innerWidth;
+
+
+let altoPantalla = window.innerHeight;
+
+
+
+
+
+let anchoBase = 1280;
+
+
+let altoBase = 720;
+
+
+
+
+
+let escalaX = anchoPantalla / anchoBase;
+
+
+let escalaY = altoPantalla / altoBase;
+
+
+
+
+
+let escenario = document.getElementById("escenario");
+
+
+
+
+
+escenario.style.transform =
+
+"scale(" + escalaX + "," + escalaY + ")";
+
+
+
+}
+
+
+
+
+
+
+window.addEventListener("resize", ajustarEscenario);
+
+
+ajustarEscenario();
+
+
+
+
 
 
 
@@ -1276,6 +1333,7 @@ document
 
 
 }
+
 
 
 
@@ -1317,6 +1375,7 @@ moverBarras();
 
 
 
+
 audio.addEventListener("pause",function(){
 
 
@@ -1324,6 +1383,8 @@ detenerBarras();
 
 
 });
+
+
 
 
 
@@ -1402,7 +1463,6 @@ barra.style.height="20px";
 
 
 }
-
 
 
 
