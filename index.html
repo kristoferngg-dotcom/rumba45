@@ -1,10 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUMBA 45</title>
+
 <style>
 
 *{
   box-sizing:border-box;
 }
 
-body {
+body{
   margin:0;
   min-height:100vh;
   overflow-x:hidden;
@@ -15,16 +22,17 @@ body {
 }
 
 
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR */
+
 .contenedor{
   position:relative;
   width:100%;
   min-height:100vh;
-  overflow:hidden;
 }
 
 
 /* CAJAS */
+
 .caja{
   position:absolute;
   width:18vw;
@@ -42,8 +50,8 @@ body {
 
 
 .caja2{
-  top:8vh;
-  right:5vw;
+  top:10vh;
+  right:8vw;
 }
 
 
@@ -61,7 +69,7 @@ body {
 
 
 .caja img{
-  width:100%;
+  width:115%;
   height:auto;
   border-radius:10px;
 }
@@ -69,15 +77,16 @@ body {
 
 
 /* LOGO */
+
 .logo{
 
-  width:28vw !important;
-  max-width:400px;
-  min-width:250px;
+width:28vw !important;
+max-width:400px;
+min-width:250px;
 
-  animation:girar 4s linear infinite;
+animation:girar 4s linear infinite;
 
-  transform-origin:center;
+transform-origin:center;
 
 }
 
@@ -97,7 +106,8 @@ transform:rotate(360deg);
 
 
 
-/* IMAGENES CON COLOR */
+/* COLORES */
+
 .slogan,
 .imagen-animada{
 
@@ -121,7 +131,8 @@ filter:hue-rotate(360deg);
 
 
 
-/* CAJA CENTRAL */
+/* PUBLICIDAD CENTRAL */
+
 .publicidad{
 
 position:absolute;
@@ -132,13 +143,11 @@ left:50%;
 
 transform:translate(-50%,-50%);
 
-
 width:35vw;
 
 max-width:400px;
 
 min-width:300px;
-
 
 background:rgba(255,255,255,0.7);
 
@@ -155,6 +164,7 @@ font-size:clamp(14px,1.3vw,20px);
 
 
 /* TITULO */
+
 .titulo{
 
 position:fixed;
@@ -221,15 +231,11 @@ animation-duration:40s;
 @keyframes moverTitulo{
 
 from{
-
 transform:translateX(30%);
-
 }
 
 to{
-
 transform:translateX(-50%);
-
 }
 
 }
@@ -239,15 +245,11 @@ transform:translateX(-50%);
 @keyframes moverColor{
 
 0%{
-
 background-position:0%;
-
 }
 
 100%{
-
 background-position:400%;
-
 }
 
 }
@@ -304,12 +306,11 @@ z-index:998;
 
 padding:20px;
 
-transition:0.4s;
+transition:.4s;
 
 text-align:center;
 
 }
-
 
 
 .menu-musica.activo{
@@ -319,13 +320,104 @@ right:0;
 }
 
 
-
 .menu-musica audio{
 
 width:100%;
 
 }
-id="m2s8kd"
+
+
+/* LASERES */
+
+.laser{
+
+position:fixed;
+
+width:150%;
+
+height:3px;
+
+left:-25%;
+
+background:linear-gradient(
+90deg,
+transparent,
+cyan,
+red,
+yellow,
+transparent
+);
+
+opacity:.7;
+
+z-index:-1;
+
+animation:moverLaser 5s linear infinite;
+
+}
+
+
+
+.laser:nth-child(2){
+
+animation-delay:2s;
+
+}
+
+
+
+@keyframes moverLaser{
+
+from{
+transform:translateX(-50%) rotate(20deg);
+}
+
+to{
+transform:translateX(50%) rotate(20deg);
+}
+
+}
+
+
+
+/* ECUALIZADOR */
+
+.ecualizador{
+
+display:flex;
+
+justify-content:center;
+
+align-items:flex-end;
+
+gap:8px;
+
+height:100px;
+
+margin-top:20px;
+
+}
+
+
+
+.barra{
+
+width:10px;
+
+height:20px;
+
+background:cyan;
+
+border-radius:5px;
+
+transition:height .1s;
+
+}
+
+
+
+/* RESPONSIVE */
+
 @media(max-width:600px){
 
 
@@ -338,10 +430,6 @@ flex-direction:column;
 align-items:center;
 
 padding-top:80px;
-
-min-height:auto;
-
-overflow:visible;
 
 }
 
@@ -357,14 +445,6 @@ padding:10px;
 
 
 
-.titulo-texto{
-
-animation-duration:20s;
-
-}
-
-
-
 .caja{
 
 position:static;
@@ -374,17 +454,6 @@ width:90%;
 max-width:none;
 
 margin:10px auto;
-
-}
-
-
-
-.caja1,
-.caja2,
-.caja3,
-.caja4{
-
-position:static;
 
 }
 
@@ -435,33 +504,19 @@ width:80%;
 
 }
 
-
-/* PANTALLAS MUY GRANDES */
-@media(min-width:1800px){
-
-.logo{
-
-max-width:500px;
-
-}
-
-
-.publicidad{
-
-max-width:500px;
-
-}
-
-
-}
-
 </style>
-
 </head>
-
-
 <body>
 
+
+<!-- LASERES -->
+
+<div class="laser"></div>
+<div class="laser"></div>
+
+
+
+<!-- BOTON MENU -->
 
 <div class="boton-menu" onclick="abrirMenu()">
 
@@ -471,6 +526,7 @@ max-width:500px;
 
 
 
+<!-- TITULO -->
 
 <div class="titulo">
 
@@ -497,23 +553,41 @@ max-width:500px;
 
 
 
+<!-- MENU MUSICA -->
+
 <div class="menu-musica" id="menuMusica">
 
+
 <h2>
-
 🎧 Escucha un poco de nuestro ritmo
-
 </h2>
 
 
-<audio controls loop>
+<audio id="musica" controls loop>
 
-<source src="./comandante_de_bocinas.mp3" type="audio/mpeg">
+<source src="comandante_de_bocinas.mp3" type="audio/mpeg">
 
 </audio>
 
+<audio id="musica" controls loop>
+  <source src="intro-2-rumba-45.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<div class="ecualizador">
+
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
 
 </div>
+
+
+</div>
+
 
 
 
@@ -544,7 +618,6 @@ max-width:500px;
 
 <div class="caja caja3">
 
-
 <h3 class="movtext">
 
 CAPITAN DEL DESMADRE
@@ -569,6 +642,7 @@ CAPITAN DEL DESMADRE
 
 
 
+
 <div class="caja caja4">
 
 
@@ -581,6 +655,7 @@ CAPITAN PINGA LOCA
 
 
 <img class="imagen-animada" src="logopecas.jpg">
+
 
 
 
@@ -598,6 +673,7 @@ CAPITAN PINGA LOCA
 
 
 
+
 <div class="publicidad">
 
 
@@ -606,6 +682,7 @@ CAPITAN PINGA LOCA
 ¡Sonido Rumba 45!
 
 </h2>
+
 
 
 <h3>
@@ -621,13 +698,17 @@ XV años, bodas, etc
 
 
 
+
 </div>
 
 
 
 
 
+
+
 <script>
+
 
 function abrirMenu(){
 
@@ -637,6 +718,75 @@ document
 .toggle("activo");
 
 }
+
+
+
+
+
+// ECUALIZADOR DE PRUEBA
+const audios = document.querySelectorAll("audio");
+const barras = document.querySelectorAll(".barra");
+
+let animacion;
+
+
+audios.forEach(function(audio){
+
+  audio.addEventListener("play", function(){
+
+    moverBarras();
+
+  });
+
+
+  audio.addEventListener("pause", function(){
+
+    detenerBarras();
+
+  });
+
+
+  audio.addEventListener("ended", function(){
+
+    detenerBarras();
+
+  });
+
+});
+
+
+
+function moverBarras(){
+
+  barras.forEach(function(barra){
+
+    let altura = Math.random() * 80 + 10;
+
+    barra.style.height = altura + "px";
+
+  });
+
+
+  animacion = requestAnimationFrame(moverBarras);
+
+}
+
+
+
+function detenerBarras(){
+
+  cancelAnimationFrame(animacion);
+
+
+  barras.forEach(function(barra){
+
+    barra.style.height = "20px";
+
+  });
+
+}
+
+
 
 </script>
 
