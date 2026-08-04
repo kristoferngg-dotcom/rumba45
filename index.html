@@ -54,7 +54,7 @@ height:720px;
 
 overflow:hidden;
 
-transform-origin:top left;
+transform-origin:0 0;
 
 z-index:1;
 
@@ -882,9 +882,9 @@ top:0;
 
 left:0;
 
-width:100%;
+width:1280px;
 
-height:100%;
+height:720px;
 
 background-image:url("fondo3rumba.jpg");
 
@@ -1271,63 +1271,26 @@ fiestas, XV años, bodas, etc.
 
 /* ESCALADO COMPLETO DEL ESCENARIO */
 
-
 function ajustarEscenario(){
 
+let ancho = window.innerWidth;
+let alto = window.innerHeight;
 
 
-let anchoPantalla = window.innerWidth;
-
-
-let altoPantalla = window.innerHeight;
-
-
-
-
-
-let anchoBase = 1280;
-
-
-let altoBase = 720;
-
-
-
-
-
-let escalaX = anchoPantalla / anchoBase;
-
-
-let escalaY = altoPantalla / altoBase;
-
-
-
+let escalaX = ancho / 1280;
+let escalaY = alto / 720;
 
 
 let escenario = document.getElementById("escenario");
 
 
-
-
-
 escenario.style.transform =
-
 "scale(" + escalaX + "," + escalaY + ")";
 
-
-
 }
-
-
-
-
-
-
-window.addEventListener("resize", ajustarEscenario);
-
+  window.addEventListener("resize", ajustarEscenario);
 
 ajustarEscenario();
-
-
 
 
 
