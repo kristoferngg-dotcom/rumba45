@@ -1,129 +1,191 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>RUMBA 45</title>
+
 
 <style>
 
-*
 
-
-
-
-
-{
+*{
   box-sizing:border-box;
 }
-html{
-  min-height:100%;
-  background-image:url("fondo3rumba.jpg");
-  background-size:cover;
-  background-position:center top;
-  background-repeat:no-repeat;
-}
 
-body{
+
+html,body{
+
   margin:0;
+
   width:100%;
+
   min-height:100%;
+
   overflow-x:hidden;
 
+  overflow-y:hidden;
+
+
   background-image:url("fondo3rumba.jpg");
-  background-size:100% auto;
-  background-position:center top;
-  background-repeat:repeat-y;
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-repeat:no-repeat;
+
 }
+
 
 
 /* CONTENEDOR */
 
 .contenedor{
+
   position:relative;
+
   width:100%;
+
   min-height:100vh;
+
+  z-index:2;
+
 }
+
+
+
+
 
 /* CAJAS */
 
+
 .caja{
+
   position:absolute;
-  width:18vw;
-  max-width:250px;
-  min-width:150px;
+
+  width:clamp(100px,18vw,250px);
+
   padding:10px;
+
   text-align:center;
+
 }
+
+
 
 
 .caja1{
+
   top:5vh;
+
   left:2vw;
+
 }
+
 
 
 .caja2{
+
   top:10vh;
+
   right:10vw;
+
 }
+
 
 
 .caja3{
+
   top:32vh;
+
   left:8vw;
+
 }
+
 
 
 .caja4{
+
   top:32vh;
+
   right:8vw;
+
 }
+
+
+
 
 
 
 .caja img{
+
   width:115%;
+
   height:auto;
+
   border-radius:10px;
+
 }
+
+
+
 
 
 
 /* LOGO */
 
+
 .logo{
 
-width:28vw !important;
-max-width:400px;
-min-width:250px;
+  width:clamp(150px,28vw,400px) !important;
 
-animation:girar 4s linear infinite;
+  animation:girar 4s linear infinite;
 
-transform-origin:center;
+  transform-origin:center;
 
 }
+
+
+
 
 
 
 @keyframes girar{
 
+
 from{
+
 transform:rotate(0deg);
+
 }
+
 
 to{
+
 transform:rotate(360deg);
-}
 
 }
 
 
+}
 
-/* COLORES */
+
+
+
+
+
+
+/* CAMBIO DE COLORES */
+
 
 .slogan,
 .imagen-animada{
+
 
 animation:colores 3s linear infinite;
 
@@ -131,240 +193,530 @@ animation:colores 3s linear infinite;
 
 
 
+
 @keyframes colores{
 
+
 0%{
+
 filter:hue-rotate(0deg);
+
 }
+
 
 100%{
+
 filter:hue-rotate(360deg);
-}
 
 }
 
 
+}
 
-/* PUBLICIDAD CENTRAL */
+
+
+
+
+
+
+/* PUBLICIDAD */
+
 
 .publicidad{
 
+
 position:absolute;
+
 
 top:55%;
 
+
 left:50%;
+
 
 transform:translate(-50%,-50%);
 
-width:35vw;
 
-max-width:400px;
 
-min-width:300px;
+width:clamp(250px,35vw,400px);
+
+
 
 background:rgba(255,255,255,0.7);
 
+
+
 padding:20px;
+
+
 
 border-radius:15px;
 
+
+
 text-align:center;
 
-font-size:clamp(14px,1.3vw,20px);
+
+
+font-size:clamp(12px,1.3vw,20px);
+
 
 }
+
+
+
+
 
 
 
 /* TITULO */
 
+
 .titulo{
+
 
 position:fixed;
 
+
 top:0;
+
 
 left:0;
 
+
 width:100%;
+
 
 overflow:hidden;
 
+
 font-size:clamp(18px,2vw,35px);
+
 
 padding:20px;
 
+
 background:rgba(0,0,0,0.5);
+
 
 z-index:10;
 
+
 }
+
+
+
+
 
 
 
 .titulo-texto,
 .movtext{
 
+
 display:inline-block;
+
 
 white-space:nowrap;
 
+
 background:linear-gradient(
+
 90deg,
+
 red,
+
 yellow,
+
 cyan,
+
 lime,
+
 red
+
 );
+
 
 background-size:400%;
 
+
 -webkit-background-clip:text;
+
 
 color:transparent;
 
 
+
 animation:
+
+
 moverTitulo 10s ease-in-out infinite,
+
+
 moverColor 6s linear infinite;
 
+
 }
+
+
 
 
 
 .titulo-texto{
 
+
 animation-duration:40s;
 
+
 }
+
+
+
 
 
 
 @keyframes moverTitulo{
 
+
 from{
+
 transform:translateX(30%);
+
 }
+
 
 to{
+
 transform:translateX(-50%);
-}
 
 }
+
+
+}
+
+
+
+
 
 
 
 @keyframes moverColor{
 
+
 0%{
+
 background-position:0%;
+
 }
+
 
 100%{
+
 background-position:400%;
-}
 
 }
 
 
+}
 
-/* BOTON HAMBURGUESA */
+
+
+
+
+
+
+/* BOTON MENU */
+
 
 .boton-menu{
 
+
 position:fixed;
+
 
 top:20px;
 
+
 right:20px;
+
 
 z-index:999;
 
+
 font-size:35px;
 
+
 color:white;
+
 
 background:rgba(0,0,0,0.6);
 
+
 padding:5px 15px;
+
 
 border-radius:10px;
 
+
 cursor:pointer;
+
 
 }
 
 
 
-/* PANEL MUSICA */
+
+
+
+
+/* MENU MUSICA */
+
 
 .menu-musica{
 
+
 position:fixed;
+
 
 top:0;
 
+
 right:-350px;
+
 
 width:300px;
 
+
 height:100%;
+
 
 background:rgba(0,0,0,0.9);
 
+
 color:white;
+
 
 z-index:998;
 
+
 padding:20px;
+
 
 transition:.4s;
 
+
 text-align:center;
 
+
 }
+
+
+
 
 
 .menu-musica.activo{
 
+
 right:0;
 
+
 }
+
+
+
 
 
 .menu-musica audio{
 
+
 width:100%;
+
 
 }
 
 
+
+
+
+
+
+/* PROYECCIONES DE LUZ */
+
+
+.contenedor::before,
+.contenedor::after{
+
+
+content:"";
+
+
+position:fixed;
+
+
+top:0;
+
+
+width:40vw;
+
+
+height:100vh;
+
+
+z-index:0;
+
+
+pointer-events:none;
+
+
+opacity:.25;
+
+
+filter:blur(40px);
+
+
+}
+
+
+
+
+.contenedor::before{
+
+
+left:-10vw;
+
+
+background:linear-gradient(
+
+180deg,
+
+cyan,
+
+transparent
+
+);
+
+
+transform:rotate(20deg);
+
+
+animation:luz1 6s infinite alternate;
+
+
+}
+
+
+
+
+
+.contenedor::after{
+
+
+right:-10vw;
+
+
+background:linear-gradient(
+
+180deg,
+
+magenta,
+
+transparent
+
+);
+
+
+transform:rotate(-20deg);
+
+
+animation:luz2 6s infinite alternate;
+
+
+}
+
+
+
+
+
+@keyframes luz1{
+
+
+from{
+
+transform:rotate(20deg) translateY(-50px);
+
+}
+
+
+to{
+
+transform:rotate(30deg) translateY(80px);
+
+}
+
+
+}
+
+
+
+
+
+
+@keyframes luz2{
+
+
+from{
+
+transform:rotate(-20deg) translateY(50px);
+
+}
+
+
+to{
+
+transform:rotate(-30deg) translateY(-80px);
+
+}
+
+
+}
 /* LASERES */
 
 .laser{
 
 position:fixed;
 
-width:150%;
+width:120vw;
 
-height:3px;
+height:4px;
 
-left:-25%;
+left:-10vw;
 
 background:linear-gradient(
+
 90deg,
+
 transparent,
+
 cyan,
+
 red,
+
 yellow,
+
+magenta,
+
 transparent
+
 );
 
-opacity:.7;
 
-z-index:-1;
+opacity:.8;
+
+filter:blur(1px);
+
+z-index:1;
+
+pointer-events:none;
 
 animation:moverLaser 5s linear infinite;
 
@@ -374,229 +726,341 @@ animation:moverLaser 5s linear infinite;
 
 .laser:nth-child(2){
 
+top:35%;
+
 animation-delay:2s;
 
 }
 
 
 
+
 @keyframes moverLaser{
 
-from{
+
+0%{
+
 transform:translateX(-50%) rotate(20deg);
+
 }
 
-to{
+
+
+100%{
+
 transform:translateX(50%) rotate(20deg);
-}
 
 }
+
+
+
+}
+
+
+
+
+
 
 
 
 /* ECUALIZADOR */
 
+
 .ecualizador{
+
 
 display:flex;
 
+
 justify-content:center;
+
 
 align-items:flex-end;
 
+
 gap:8px;
+
 
 height:100px;
 
+
 margin-top:20px;
 
+
 }
+
 
 
 
 .barra{
 
+
 width:10px;
+
 
 height:20px;
 
+
 background:cyan;
+
 
 border-radius:5px;
 
+
 transition:height .1s;
 
+
 }
+
+
+
+
+
+
 
 
 
 /* RESPONSIVE */
 
+
 @media(max-width:600px){
-
-
-.contenedor{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding-top:90px;
-  min-height:auto;
-}
 
 
 
 .titulo{
 
-font-size:18px;
+
+font-size:14px;
+
 
 padding:10px;
 
+
 }
+
+
+
+
+.boton-menu{
+
+
+font-size:25px;
+
+
+top:15px;
+
+
+right:15px;
+
+
+}
+
 
 
 
 .caja{
 
-position:static;
 
-width:90%;
+width:25vw;
 
-max-width:none;
 
-margin:10px auto;
+padding:5px;
+
 
 }
+
 
 
 
 .logo{
 
-width:280px !important;
 
-min-width:0;
+width:40vw !important;
+
 
 }
 
-
-
-.slogan{
-
-width:200px !important;
-
-}
 
 
 
 .publicidad{
 
-position:static;
 
-transform:none;
+width:70vw;
 
-width:90%;
 
-min-width:0;
+padding:10px;
 
-margin:20px auto;
-
-font-size:16px;
 
 }
+
 
 
 
 .menu-musica{
 
+
 width:80%;
 
+
 }
 
 
+
+
 }
+
+
 
 </style>
+
 </head>
+
+
 <body>
 
 
 <!-- LASERES -->
 
+
 <div class="laser"></div>
+
 <div class="laser"></div>
+
+
 
 
 
 <!-- BOTON MENU -->
 
+
 <div class="boton-menu" onclick="abrirMenu()">
+
 
 ☰
 
+
 </div>
+
+
 
 
 
 <!-- TITULO -->
 
+
 <div class="titulo">
+
 
 <span class="titulo-texto">
 
+
 🔥 Bienvenidos al Mundo Sonidero 🔥
+
 
 🎶 El Sabor de la Música Está Aquí 🎶
 
+
 🔥 Donde Nace el Ambiente y Vive el Ritmo 🔥
+
 
 🎵 La Música Que Hace Vibrar Corazones 🎵
 
+
 💥 Puro Ritmo, Sabor y Alegría 💥
+
 
 🎧 El Poder del Sonido en un Solo Lugar 🎧
 
+
 🔥 La Fiesta Comienza Aquí 🔥
+
+
 
 </span>
 
+
 </div>
+
+
+
+
 
 
 
 
 <!-- MENU MUSICA -->
 
+
 <div class="menu-musica" id="menuMusica">
 
 
+
 <h2>
+
 🎧 Escucha un poco de nuestro ritmo
+
 </h2>
 
 
-<audio id="musica" controls loop>
+
+
+
+<audio id="musica1" controls loop>
+
 
 <source src="comandante_de_bocinas.mp3" type="audio/mpeg">
 
+
 </audio>
 
-<audio id="musica" controls loop>
-  <source src="intro-2-rumba-45.mp3" type="audio/mpeg">
+
+
+
+
+<br><br>
+
+
+
+
+
+<audio id="musica2" controls loop>
+
+
+<source src="intro-2-rumba-45.mp3" type="audio/mpeg">
+
+
 </audio>
+
+
+
+
+
 
 
 
 <div class="ecualizador">
 
+
 <div class="barra"></div>
+
 <div class="barra"></div>
+
 <div class="barra"></div>
+
 <div class="barra"></div>
+
 <div class="barra"></div>
+
+
 
 </div>
 
 
+
+
 </div>
+
 
 
 
@@ -607,20 +1071,29 @@ width:80%;
 
 
 
+
 <div class="caja caja1">
+
 
 <img class="logo" src="logo.png">
 
+
 </div>
+
+
 
 
 
 
 <div class="caja caja2">
 
+
 <img class="slogan" src="slogan.jpg">
 
+
 </div>
+
+
 
 
 
@@ -628,25 +1101,38 @@ width:80%;
 
 <div class="caja caja3">
 
+
 <h3 class="movtext">
+
 
 CAPITAN DEL DESMADRE
 
+
 </h3>
+
+
 
 
 <img class="imagen-animada" src="logo2.jpg">
 
 
 
+
+
+
 <h3 class="movtext">
 
+
 ¡El sabor, la música y la alegría están aquí!
+
 
 </h3>
 
 
+
+
 </div>
+
 
 
 
@@ -658,9 +1144,13 @@ CAPITAN DEL DESMADRE
 
 <h3 class="movtext">
 
+
 CAPITAN PINGA LOCA
 
+
 </h3>
+
+
 
 
 
@@ -669,11 +1159,17 @@ CAPITAN PINGA LOCA
 
 
 
+
+
 <h3 class="movtext">
+
 
 ¡Poniendo el ambiente que todos esperaban!
 
+
 </h3>
+
+
 
 
 </div>
@@ -681,10 +1177,8 @@ CAPITAN PINGA LOCA
 
 
 
-
-
-
 <div class="publicidad">
+
 
 
 <h2>
@@ -695,21 +1189,31 @@ CAPITAN PINGA LOCA
 
 
 
+
 <h3>
 
-Sonidero creado y dirigido por pecas, toda la sabrosura del sonido,
-puedes contactarnos para cualquier tipo de eventos, reuniones, fiestas,
-XV años, bodas, etc
+
+Sonido creado y dirigido por pecas, toda la sabrosura del sonido,
+puedes contactarnos para cualquier tipo de eventos, reuniones,
+fiestas, XV años, bodas, etc.
+
 
 </h3>
 
 
-</div>
-
-
 
 
 </div>
+
+
+
+
+
+
+
+</div>
+
+
 
 
 
@@ -720,12 +1224,19 @@ XV años, bodas, etc
 <script>
 
 
+
+
 function abrirMenu(){
 
+
 document
+
 .getElementById("menuMusica")
+
 .classList
+
 .toggle("activo");
+
 
 }
 
@@ -733,72 +1244,134 @@ document
 
 
 
-// ECUALIZADOR DE PRUEBA
+
+
+// ECUALIZADOR
+
+
 const audios = document.querySelectorAll("audio");
+
+
 const barras = document.querySelectorAll(".barra");
+
 
 let animacion;
 
 
+
+
+
+
 audios.forEach(function(audio){
 
-  audio.addEventListener("play", function(){
-
-    moverBarras();
-
-  });
 
 
-  audio.addEventListener("pause", function(){
-
-    detenerBarras();
-
-  });
+audio.addEventListener("play",function(){
 
 
-  audio.addEventListener("ended", function(){
+moverBarras();
 
-    detenerBarras();
-
-  });
 
 });
 
 
 
+
+
+audio.addEventListener("pause",function(){
+
+
+detenerBarras();
+
+
+});
+
+
+
+
+
+audio.addEventListener("ended",function(){
+
+
+detenerBarras();
+
+
+});
+
+
+
+});
+
+
+
+
+
+
+
 function moverBarras(){
 
-  barras.forEach(function(barra){
-
-    let altura = Math.random() * 80 + 10;
-
-    barra.style.height = altura + "px";
-
-  });
 
 
-  animacion = requestAnimationFrame(moverBarras);
+barras.forEach(function(barra){
+
+
+
+let altura = Math.random() * 80 + 10;
+
+
+
+barra.style.height = altura + "px";
+
+
+
+});
+
+
+
+
+animacion = requestAnimationFrame(moverBarras);
+
+
 
 }
+
+
+
+
+
 
 
 
 function detenerBarras(){
 
-  cancelAnimationFrame(animacion);
 
 
-  barras.forEach(function(barra){
+cancelAnimationFrame(animacion);
 
-    barra.style.height = "20px";
 
-  });
+
+barras.forEach(function(barra){
+
+
+
+barra.style.height = "20px";
+
+
+
+});
+
+
 
 }
 
 
 
+
+
 </script>
+
+
+
 
 
 
