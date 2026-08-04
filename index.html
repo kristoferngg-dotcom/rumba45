@@ -14,48 +14,70 @@
 
 
 *{
-  box-sizing:border-box;
+box-sizing:border-box;
 }
 
 
 html,body{
 
-  margin:0;
+margin:0;
 
-  width:100%;
+width:100%;
 
-  min-height:100%;
+height:100%;
 
-  overflow-x:hidden;
-
-  overflow-y:hidden;
+overflow:hidden;
 
 
-  background-image:url("fondo3rumba.jpg");
+background-image:url("fondo3rumba.jpg");
 
-  background-size:cover;
+background-size:cover;
 
-  background-position:center;
+background-position:center;
 
-  background-repeat:no-repeat;
+background-repeat:no-repeat;
 
 }
 
 
 
-/* CONTENEDOR */
+
+/* ESCENARIO QUE SE ESCALA */
+
+.escenario{
+
+position:absolute;
+
+top:0;
+
+left:50%;
+
+transform-origin:top center;
+
+}
+
+
+
+
+
+/* LIENZO PRINCIPAL */
+
 
 .contenedor{
 
-  position:relative;
+position:relative;
 
-  width:100%;
+width:1280px;
 
-  min-height:100vh;
+height:720px;
 
-  z-index:2;
+transform-origin:top center;
+
+z-index:2;
 
 }
+
+
 
 
 
@@ -66,24 +88,25 @@ html,body{
 
 .caja{
 
-  position:absolute;
+position:absolute;
 
-  width:clamp(100px,18vw,250px);
+width:230px;
 
-  padding:10px;
+padding:10px;
 
-  text-align:center;
+text-align:center;
 
 }
 
 
 
 
+
 .caja1{
 
-  top:5vh;
+top:35px;
 
-  left:2vw;
+left:30px;
 
 }
 
@@ -91,9 +114,9 @@ html,body{
 
 .caja2{
 
-  top:10vh;
+top:70px;
 
-  right:10vw;
+right:120px;
 
 }
 
@@ -101,9 +124,9 @@ html,body{
 
 .caja3{
 
-  top:32vh;
+top:230px;
 
-  left:8vw;
+left:100px;
 
 }
 
@@ -111,12 +134,11 @@ html,body{
 
 .caja4{
 
-  top:32vh;
+top:230px;
 
-  right:8vw;
+right:100px;
 
 }
-
 
 
 
@@ -124,13 +146,14 @@ html,body{
 
 .caja img{
 
-  width:115%;
+width:115%;
 
-  height:auto;
+height:auto;
 
-  border-radius:10px;
+border-radius:10px;
 
 }
+
 
 
 
@@ -142,14 +165,13 @@ html,body{
 
 .logo{
 
-  width:clamp(150px,28vw,400px) !important;
+width:400px !important;
 
-  animation:girar 4s linear infinite;
+animation:girar 4s linear infinite;
 
-  transform-origin:center;
+transform-origin:center;
 
 }
-
 
 
 
@@ -180,16 +202,20 @@ transform:rotate(360deg);
 
 
 
-/* CAMBIO DE COLORES */
+/* EFECTOS DE COLOR */
 
 
 .slogan,
+
 .imagen-animada{
 
 
 animation:colores 3s linear infinite;
 
+
 }
+
+
 
 
 
@@ -219,6 +245,8 @@ filter:hue-rotate(360deg);
 
 
 
+
+
 /* PUBLICIDAD */
 
 
@@ -228,37 +256,31 @@ filter:hue-rotate(360deg);
 position:absolute;
 
 
-top:55%;
+top:400px;
 
 
 left:50%;
 
 
-transform:translate(-50%,-50%);
+transform:translateX(-50%);
 
 
-
-width:clamp(250px,35vw,400px);
-
+width:400px;
 
 
-background:rgba(255,255,255,0.7);
-
+background:rgba(255,255,255,.7);
 
 
 padding:20px;
 
 
-
 border-radius:15px;
-
 
 
 text-align:center;
 
 
-
-font-size:clamp(12px,1.3vw,20px);
+font-size:18px;
 
 
 }
@@ -287,16 +309,19 @@ left:0;
 width:100%;
 
 
+height:auto;
+
+
 overflow:hidden;
 
 
-font-size:clamp(18px,2vw,35px);
+font-size:35px;
 
 
 padding:20px;
 
 
-background:rgba(0,0,0,0.5);
+background:rgba(0,0,0,.5);
 
 
 z-index:10;
@@ -309,8 +334,8 @@ z-index:10;
 
 
 
-
 .titulo-texto,
+
 .movtext{
 
 
@@ -337,6 +362,7 @@ red
 );
 
 
+
 background-size:400%;
 
 
@@ -349,9 +375,7 @@ color:transparent;
 
 animation:
 
-
 moverTitulo 10s ease-in-out infinite,
-
 
 moverColor 6s linear infinite;
 
@@ -362,14 +386,13 @@ moverColor 6s linear infinite;
 
 
 
-.titulo-texto{
 
+
+.titulo-texto{
 
 animation-duration:40s;
 
-
 }
-
 
 
 
@@ -398,8 +421,6 @@ transform:translateX(-50%);
 
 
 
-
-
 @keyframes moverColor{
 
 
@@ -418,6 +439,7 @@ background-position:400%;
 
 
 }
+
 
 
 
@@ -449,7 +471,7 @@ font-size:35px;
 color:white;
 
 
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,.6);
 
 
 padding:5px 15px;
@@ -490,7 +512,7 @@ width:300px;
 height:100%;
 
 
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,.9);
 
 
 color:white;
@@ -512,16 +534,12 @@ text-align:center;
 
 
 
-
-
 .menu-musica.activo{
 
 
 right:0;
 
-
 }
-
 
 
 
@@ -534,12 +552,6 @@ width:100%;
 
 }
 
-
-
-
-
-
-
 /* PROYECCIONES DE LUZ */
 
 
@@ -550,16 +562,16 @@ width:100%;
 content:"";
 
 
-position:fixed;
+position:absolute;
 
 
 top:0;
 
 
-width:40vw;
+width:500px;
 
 
-height:100vh;
+height:720px;
 
 
 z-index:0;
@@ -582,7 +594,7 @@ filter:blur(40px);
 .contenedor::before{
 
 
-left:-10vw;
+left:-100px;
 
 
 background:linear-gradient(
@@ -611,7 +623,7 @@ animation:luz1 6s infinite alternate;
 .contenedor::after{
 
 
-right:-10vw;
+right:-100px;
 
 
 background:linear-gradient(
@@ -660,7 +672,6 @@ transform:rotate(30deg) translateY(80px);
 
 
 
-
 @keyframes luz2{
 
 
@@ -679,17 +690,30 @@ transform:rotate(-30deg) translateY(-80px);
 
 
 }
+
+
+
+
+
+
+
 /* LASERES */
+
 
 .laser{
 
+
 position:fixed;
 
-width:120vw;
+
+width:1500px;
+
 
 height:4px;
 
-left:-10vw;
+
+left:50%;
+
 
 background:linear-gradient(
 
@@ -710,27 +734,39 @@ transparent
 );
 
 
+
 opacity:.8;
+
 
 filter:blur(1px);
 
+
 z-index:1;
+
 
 pointer-events:none;
 
+
 animation:moverLaser 5s linear infinite;
 
+
 }
+
+
 
 
 
 .laser:nth-child(2){
 
-top:35%;
+
+top:250px;
+
 
 animation-delay:2s;
 
+
 }
+
 
 
 
@@ -740,7 +776,9 @@ animation-delay:2s;
 
 0%{
 
+
 transform:translateX(-50%) rotate(20deg);
+
 
 }
 
@@ -748,14 +786,14 @@ transform:translateX(-50%) rotate(20deg);
 
 100%{
 
+
 transform:translateX(50%) rotate(20deg);
 
-}
-
-
 
 }
 
+
+}
 
 
 
@@ -817,98 +855,24 @@ transition:height .1s;
 
 
 
+/* AJUSTE PARA TODAS LAS PANTALLAS */
 
 
-
-/* RESPONSIVE */
-
-
-@media(max-width:600px){
+@media(max-aspect-ratio:16/9){
 
 
-
-.titulo{
-
-
-font-size:14px;
+.escenario{
 
 
-padding:10px;
+transform-origin:top center;
 
 
 }
 
 
 
-
-.boton-menu{
-
-
-font-size:25px;
-
-
-top:15px;
-
-
-right:15px;
-
-
 }
 
-
-
-
-.caja{
-
-
-width:25vw;
-
-
-padding:5px;
-
-
-}
-
-
-
-
-.logo{
-
-
-width:40vw !important;
-
-
-}
-
-
-
-
-.publicidad{
-
-
-width:70vw;
-
-
-padding:10px;
-
-
-}
-
-
-
-
-.menu-musica{
-
-
-width:80%;
-
-
-}
-
-
-
-
-}
 
 
 
@@ -917,15 +881,22 @@ width:80%;
 </head>
 
 
+
+
 <body>
 
 
-<!-- LASERES -->
+
+
+
+<!-- EFECTOS DE LUZ -->
 
 
 <div class="laser"></div>
 
 <div class="laser"></div>
+
+
 
 
 
@@ -946,6 +917,7 @@ width:80%;
 
 
 
+
 <!-- TITULO -->
 
 
@@ -957,31 +929,23 @@ width:80%;
 
 🔥 Bienvenidos al Mundo Sonidero 🔥
 
-
 🎶 El Sabor de la Música Está Aquí 🎶
-
 
 🔥 Donde Nace el Ambiente y Vive el Ritmo 🔥
 
-
 🎵 La Música Que Hace Vibrar Corazones 🎵
-
 
 💥 Puro Ritmo, Sabor y Alegría 💥
 
-
 🎧 El Poder del Sonido en un Solo Lugar 🎧
 
-
 🔥 La Fiesta Comienza Aquí 🔥
-
 
 
 </span>
 
 
 </div>
-
 
 
 
@@ -1017,9 +981,7 @@ width:80%;
 
 
 
-
 <br><br>
-
 
 
 
@@ -1031,8 +993,6 @@ width:80%;
 
 
 </audio>
-
-
 
 
 
@@ -1053,7 +1013,6 @@ width:80%;
 <div class="barra"></div>
 
 
-
 </div>
 
 
@@ -1065,9 +1024,15 @@ width:80%;
 
 
 
+
+<!-- ESCENARIO ESCALABLE -->
+
+
+<div class="escenario">
 
 
 <div class="contenedor">
+  
 
 
 
@@ -1099,6 +1064,7 @@ width:80%;
 
 
 
+
 <div class="caja caja3">
 
 
@@ -1114,7 +1080,6 @@ CAPITAN DEL DESMADRE
 
 
 <img class="imagen-animada" src="logo2.jpg">
-
 
 
 
@@ -1139,7 +1104,9 @@ CAPITAN DEL DESMADRE
 
 
 
+
 <div class="caja caja4">
+
 
 
 <h3 class="movtext">
@@ -1177,6 +1144,9 @@ CAPITAN PINGA LOCA
 
 
 
+
+
+
 <div class="publicidad">
 
 
@@ -1202,13 +1172,15 @@ fiestas, XV años, bodas, etc.
 
 
 
-
 </div>
 
 
 
 
 
+
+
+</div>
 
 
 </div>
@@ -1224,6 +1196,59 @@ fiestas, XV años, bodas, etc.
 <script>
 
 
+
+/* ESCALADO AUTOMATICO */
+
+
+function ajustarEscenario(){
+
+
+let ancho = window.innerWidth;
+
+
+let alto = window.innerHeight;
+
+
+
+let escalaX = ancho / 1280;
+
+
+let escalaY = alto / 720;
+
+
+
+let escala = Math.min(escalaX, escalaY);
+
+
+
+
+document.querySelector(".escenario").style.transform =
+
+"translateX(-50%) scale(" + escala + ")";
+
+
+
+}
+
+
+
+
+
+
+
+window.addEventListener("resize",ajustarEscenario);
+
+
+ajustarEscenario();
+
+
+
+
+
+
+
+
+/* MENU */
 
 
 function abrirMenu(){
@@ -1246,7 +1271,9 @@ document
 
 
 
-// ECUALIZADOR
+
+
+/* ECUALIZADOR */
 
 
 const audios = document.querySelectorAll("audio");
@@ -1308,6 +1335,7 @@ detenerBarras();
 
 
 
+
 function moverBarras(){
 
 
@@ -1316,11 +1344,11 @@ barras.forEach(function(barra){
 
 
 
-let altura = Math.random() * 80 + 10;
+let altura = Math.random()*80+10;
 
 
 
-barra.style.height = altura + "px";
+barra.style.height = altura+"px";
 
 
 
@@ -1328,8 +1356,7 @@ barra.style.height = altura + "px";
 
 
 
-
-animacion = requestAnimationFrame(moverBarras);
+animacion=requestAnimationFrame(moverBarras);
 
 
 
@@ -1353,9 +1380,7 @@ cancelAnimationFrame(animacion);
 barras.forEach(function(barra){
 
 
-
-barra.style.height = "20px";
-
+barra.style.height="20px";
 
 
 });
@@ -1367,9 +1392,7 @@ barra.style.height = "20px";
 
 
 
-
 </script>
-
 
 
 
