@@ -1,139 +1,163 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RUMBA 45</title>
-
 <style>
 
+*{
+  box-sizing:border-box;
+}
+
 body {
-  margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-image: url("fondo3rumba.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  margin:0;
+  min-height:100vh;
+  overflow-x:hidden;
+  background-image:url("fondo3rumba.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
 
-/* CONTENEDOR */
-.contenedor {
-  position: relative;
-  min-height: 100vh;
+/* CONTENEDOR PRINCIPAL */
+.contenedor{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  overflow:hidden;
 }
 
 
 /* CAJAS */
-.caja {
-  position: absolute;
-  width: 250px;
-  padding: 10px;
-  text-align: center;
-}
-
-.caja1 {
-  top: 50px;
-  left: 10px;
- 
-}
-
-.caja2 {
-  top: 80px;
-  right: 100px;
-}
-
-.caja3 {
-  top: 220px;
-  left: 100px;
-}
-
-.caja4 {
-  top: 220px;
-  right: 100px;
+.caja{
+  position:absolute;
+  width:18vw;
+  max-width:250px;
+  min-width:180px;
+  padding:10px;
+  text-align:center;
 }
 
 
-.caja img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+.caja1{
+  top:5vh;
+  left:2vw;
 }
+
+
+.caja2{
+  top:8vh;
+  right:5vw;
+}
+
+
+.caja3{
+  top:32vh;
+  left:8vw;
+}
+
+
+.caja4{
+  top:32vh;
+  right:8vw;
+}
+
+
+
+.caja img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+}
+
 
 
 /* LOGO */
-.logo {
-  width: 400px !important;
-  animation: girar 4s linear infinite;
-  transform-origin: center;
-  scale: 1.2;
-}
+.logo{
 
-@keyframes girar {
+  width:28vw !important;
+  max-width:400px;
+  min-width:250px;
 
-from {
- transform: rotate(0deg);
-}
+  animation:girar 4s linear infinite;
 
-to {
- transform: rotate(360deg);
-}
+  transform-origin:center;
 
 }
 
 
-/* COLORES */
+
+@keyframes girar{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+
+
+/* IMAGENES CON COLOR */
 .slogan,
-.imagen-animada {
-  animation: colores 3s linear infinite;
-}
+.imagen-animada{
 
-
-@keyframes colores {
-
-0% {
- filter: hue-rotate(0deg);
-}
-
-100% {
- filter: hue-rotate(360deg);
-}
+animation:colores 3s linear infinite;
 
 }
 
 
-/* CAJA CENTRAL PC */
-.publicidad {
 
-  position: absolute;
+@keyframes colores{
 
-  top: 40%;
+0%{
+filter:hue-rotate(0deg);
+}
 
-  left: 50%;
+100%{
+filter:hue-rotate(360deg);
+}
 
-  transform: translateX(-50%);
+}
 
-  width: 400px;
 
-  background: rgba(255,255,255,0.7);
 
-  padding:20px;
+/* CAJA CENTRAL */
+.publicidad{
 
-  border-radius:15px;
+position:absolute;
 
-  text-align:center;
+top:55%;
 
-  font-size:20px;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+
+width:35vw;
+
+max-width:400px;
+
+min-width:300px;
+
+
+background:rgba(255,255,255,0.7);
+
+padding:20px;
+
+border-radius:15px;
+
+text-align:center;
+
+font-size:clamp(14px,1.3vw,20px);
 
 }
 
 
 
 /* TITULO */
-.titulo {
+.titulo{
 
-position:absolute;
+position:fixed;
 
 top:0;
 
@@ -143,20 +167,20 @@ width:100%;
 
 overflow:hidden;
 
-font-size:35px;
+font-size:clamp(18px,2vw,35px);
 
 padding:20px;
 
 background:rgba(0,0,0,0.5);
 
-box-sizing:border-box;
+z-index:10;
 
 }
 
 
 
 .titulo-texto,
-.movtext {
+.movtext{
 
 display:inline-block;
 
@@ -168,13 +192,15 @@ red,
 yellow,
 cyan,
 lime,
-red);
+red
+);
 
 background-size:400%;
 
 -webkit-background-clip:text;
 
 color:transparent;
+
 
 animation:
 moverTitulo 10s ease-in-out infinite,
@@ -184,7 +210,7 @@ moverColor 6s linear infinite;
 
 
 
-.titulo-texto {
+.titulo-texto{
 
 animation-duration:40s;
 
@@ -192,15 +218,15 @@ animation-duration:40s;
 
 
 
-@keyframes moverTitulo {
+@keyframes moverTitulo{
 
-from {
+from{
 
 transform:translateX(30%);
 
 }
 
-to {
+to{
 
 transform:translateX(-50%);
 
@@ -210,15 +236,15 @@ transform:translateX(-50%);
 
 
 
-@keyframes moverColor {
+@keyframes moverColor{
 
-0% {
+0%{
 
 background-position:0%;
 
 }
 
-100% {
+100%{
 
 background-position:400%;
 
@@ -227,9 +253,10 @@ background-position:400%;
 }
 
 
-/* BOTON MENU */
 
-.boton-menu {
+/* BOTON HAMBURGUESA */
+
+.boton-menu{
 
 position:fixed;
 
@@ -254,9 +281,10 @@ cursor:pointer;
 }
 
 
-/* MENU MUSICA */
 
-.menu-musica {
+/* PANEL MUSICA */
+
+.menu-musica{
 
 position:fixed;
 
@@ -284,7 +312,7 @@ text-align:center;
 
 
 
-.menu-musica.activo {
+.menu-musica.activo{
 
 right:0;
 
@@ -292,16 +320,16 @@ right:0;
 
 
 
-.menu-musica audio {
+.menu-musica audio{
 
 width:100%;
 
 }
-/* RESPONSIVE CELULAR */
-@media (max-width:600px) {
+id="m2s8kd"
+@media(max-width:600px){
 
 
-.contenedor {
+.contenedor{
 
 display:flex;
 
@@ -313,23 +341,23 @@ padding-top:80px;
 
 min-height:auto;
 
+overflow:visible;
+
 }
 
 
 
-.titulo {
+.titulo{
 
 font-size:18px;
 
 padding:10px;
 
-position:fixed;
-
 }
 
 
 
-.titulo-texto {
+.titulo-texto{
 
 animation-duration:20s;
 
@@ -337,11 +365,13 @@ animation-duration:20s;
 
 
 
-.caja {
+.caja{
 
 position:static;
 
 width:90%;
+
+max-width:none;
 
 margin:10px auto;
 
@@ -349,7 +379,28 @@ margin:10px auto;
 
 
 
-.slogan {
+.caja1,
+.caja2,
+.caja3,
+.caja4{
+
+position:static;
+
+}
+
+
+
+.logo{
+
+width:280px !important;
+
+min-width:0;
+
+}
+
+
+
+.slogan{
 
 width:200px !important;
 
@@ -357,7 +408,7 @@ width:200px !important;
 
 
 
-.publicidad {
+.publicidad{
 
 position:static;
 
@@ -365,15 +416,17 @@ transform:none;
 
 width:90%;
 
-font-size:16px;
+min-width:0;
 
 margin:20px auto;
+
+font-size:16px;
 
 }
 
 
 
-.menu-musica {
+.menu-musica{
 
 width:80%;
 
@@ -383,6 +436,24 @@ width:80%;
 }
 
 
+/* PANTALLAS MUY GRANDES */
+@media(min-width:1800px){
+
+.logo{
+
+max-width:500px;
+
+}
+
+
+.publicidad{
+
+max-width:500px;
+
+}
+
+
+}
 
 </style>
 
@@ -392,8 +463,6 @@ width:80%;
 <body>
 
 
-<!-- BOTON HAMBURGUESA -->
-
 <div class="boton-menu" onclick="abrirMenu()">
 
 ☰
@@ -402,7 +471,6 @@ width:80%;
 
 
 
-<!-- TITULO -->
 
 <div class="titulo">
 
@@ -428,16 +496,17 @@ width:80%;
 
 
 
-<!-- MENU MUSICA -->
 
 <div class="menu-musica" id="menuMusica">
 
 <h2>
+
 🎧 Escucha un poco de nuestro ritmo
+
 </h2>
 
 
-<audio id="musica" controls loop>
+<audio controls loop>
 
 <source src="./comandante_de_bocinas.mp3" type="audio/mpeg">
 
@@ -449,7 +518,9 @@ width:80%;
 
 
 
+
 <div class="contenedor">
+
 
 
 <div class="caja caja1">
@@ -457,6 +528,7 @@ width:80%;
 <img class="logo" src="logo.png">
 
 </div>
+
 
 
 
@@ -469,22 +541,30 @@ width:80%;
 
 
 
+
 <div class="caja caja3">
 
+
 <h3 class="movtext">
+
 CAPITAN DEL DESMADRE
+
 </h3>
 
 
 <img class="imagen-animada" src="logo2.jpg">
 
 
+
 <h3 class="movtext">
+
 ¡El sabor, la música y la alegría están aquí!
+
 </h3>
 
 
 </div>
+
 
 
 
@@ -493,15 +573,21 @@ CAPITAN DEL DESMADRE
 
 
 <h3 class="movtext">
+
 CAPITAN PINGA LOCA
+
 </h3>
+
 
 
 <img class="imagen-animada" src="logopecas.jpg">
 
 
+
 <h3 class="movtext">
+
 ¡Poniendo el ambiente que todos esperaban!
+
 </h3>
 
 
@@ -510,11 +596,15 @@ CAPITAN PINGA LOCA
 
 
 
+
+
 <div class="publicidad">
 
 
 <h2>
+
 ¡Sonido Rumba 45!
+
 </h2>
 
 
@@ -530,7 +620,9 @@ XV años, bodas, etc
 </div>
 
 
+
 </div>
+
 
 
 
